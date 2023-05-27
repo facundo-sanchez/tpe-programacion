@@ -45,11 +45,6 @@ public class ServicioCaminos<T> {
 			while (arcos.hasNext()) {
 				Arco<T> arco = arcos.next();
 				int verticeAux = arco.getVerticeDestino();
-				// verificamos si el arco y el destino estan en la lista.
-				/*
-				 * sino validamos !caminosActual.contains el resultado va ser [[7, 6, 4, 5, 3]]
-				 * y es incorrecto. para origen:7 destino: 3 [[7, 5, 6, 4, 3]]
-				 */
 				if (!this.arcos.contains(arco) && !caminoActual.contains(verticeAux)) {
 					this.arcos.add(arco);
 					caminoActual.add(verticeAux);
