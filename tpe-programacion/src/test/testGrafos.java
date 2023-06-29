@@ -1,8 +1,13 @@
-package tpe;
+package test;
 
 import java.util.List;
+import grafo.Grafo;
+import grafo.GrafoDirigido;
+import servicios.ServicioBFS;
+import servicios.ServicioCaminos;
+import servicios.ServicioDFS;
 
-public class main {
+public class testGrafos {
 
 	public static <T> void main(String[] args) {
 
@@ -26,7 +31,7 @@ public class main {
 		grafo.agregarArco(3, 5, null);
 
 		grafo.agregarArco(5, 6, null); // origen = 7 destino = 3 => [7, 5, 6, 4, 3]
-		grafo.agregarArco(5, 3, null); // origen = 7 destino = 3 => [7, 5, 3]
+//		grafo.agregarArco(5, 3, null); // origen = 7 destino = 3 => [7, 5, 3]
 
 		grafo.agregarArco(6, 4, null);
 		grafo.agregarArco(6, 7, null);
@@ -74,7 +79,7 @@ public class main {
 			System.out.println(camino);
 		}
 	}
-	
+
 	// Facundo Sanchez - Tudai Olavarria - Programacion 3
 
 }

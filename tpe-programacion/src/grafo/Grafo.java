@@ -1,4 +1,4 @@
-package tpe;
+package grafo;
 
 import java.util.Iterator;
 

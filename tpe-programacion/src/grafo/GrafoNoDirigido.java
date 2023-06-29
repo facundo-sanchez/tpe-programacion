@@ -1,4 +1,4 @@
-package tpe;
+package grafo;
 
 public class GrafoNoDirigido<T> extends GrafoDirigido<T> {
 

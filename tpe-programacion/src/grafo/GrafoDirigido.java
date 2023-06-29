@@ -1,4 +1,4 @@
-package tpe;
+package grafo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,9 +8,11 @@ public class GrafoDirigido<T> implements Grafo<T> {
 
 	// Listas
 	private HashMap<Integer, ArrayList<Arco<T>>> vertices;
+	private int cantidadArcos;
 
 	public GrafoDirigido() {
 		this.vertices = new HashMap<Integer, ArrayList<Arco<T>>>();
+		this.cantidadArcos = 0;
 	}
 
 	/**
@@ -59,6 +61,7 @@ public class GrafoDirigido<T> implements Grafo<T> {
 				&& !this.existeArco(verticeId1, verticeId2)) {
 			Arco<T> arco = new Arco<T>(verticeId1, verticeId2, etiqueta);
 			this.vertices.get(verticeId1).add(arco);
+			this.cantidadArcos++;
 		}
 	}
 
@@ -72,7 +75,7 @@ public class GrafoDirigido<T> implements Grafo<T> {
 	public void borrarArco(int verticeId1, int verticeId2) {
 		if (this.existeArco(verticeId1, verticeId2)) {
 			this.vertices.get(verticeId1).remove(this.obtenerArco(verticeId1, verticeId2));
-
+			this.cantidadArcos--;
 		}
 	}
 
@@ -142,12 +145,7 @@ public class GrafoDirigido<T> implements Grafo<T> {
 	 */
 	@Override
 	public int cantidadArcos() {
-		int cantidad = 0;
-		Iterator<Integer> vertices = this.vertices.keySet().iterator();
-		while (vertices.hasNext()) {
-			cantidad += this.vertices.get(vertices.next()).size();
-		}
-		return cantidad;
+		return this.cantidadArcos;
 	}
 
 	/**
