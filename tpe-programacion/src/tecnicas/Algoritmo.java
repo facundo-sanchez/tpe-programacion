@@ -12,6 +12,8 @@ public abstract class Algoritmo {
 	public abstract int getMetrica();
 
 	public abstract int getKms();
+	
+	public abstract void setKms(int kms);
 
 	protected void getEstaciones(ArrayList<Arco<Integer>> arcos, ArrayList<Integer> estaciones) {
 		for (Arco<Integer> arco : arcos) {

@@ -32,7 +32,7 @@ public class Greedy extends Algoritmo {
 				solucion.add(arco);
 				this.unionFind.union(this.estaciones.indexOf(arco.getVerticeOrigen()),
 						this.estaciones.indexOf(arco.getVerticeDestino()));
-				this.kms += arco.getEtiqueta();
+				setKms(this.getKms()+arco.getEtiqueta());
 			}
 
 		}
@@ -81,6 +81,12 @@ public class Greedy extends Algoritmo {
 	@Override
 	public int getKms() {
 		return kms;
+	}
+	
+	@Override
+	public void setKms(int kms) {
+		// TODO Auto-generated method stub
+		this.kms = kms;
 	}
 
 }

@@ -100,6 +100,7 @@ public class Backtracking extends Algoritmo {
 		return this.kms;
 	}
 
+	@Override
 	public void setKms(int kms) {
 		// TODO Auto-generated method stub
 		this.kms = kms;
